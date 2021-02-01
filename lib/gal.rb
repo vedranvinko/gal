@@ -3,5 +3,4 @@
 require_relative "gal/version"
 
 class Gal
-
 end
