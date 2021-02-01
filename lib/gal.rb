@@ -2,7 +2,6 @@
 
 require_relative "gal/version"
 
-module Gal
-  class Error < StandardError; end
-  # Your code goes here...
+class Gal
+
 end
