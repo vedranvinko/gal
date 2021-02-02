@@ -32,6 +32,19 @@ class Gal
     # user_key
   end
 
+  def list_user_entries(num)
+    raise "Please provide integer as an argument" unless num.is_a?(Integer)
+
+    @default[:api_results_limit] = num
+    @default[:api_option] = "list"
+
+    rsp = RestClient.post @url, @default
+
+    rsp.body
+  end
+
+  alias pastes list_user_entries
+
   def show_options
     @default
   end
