@@ -32,6 +32,10 @@ class Gal
     user_key
   end
 
+  def show_options
+    @default
+  end
+
   # protected
 
   def user_key
