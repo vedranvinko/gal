@@ -32,6 +32,17 @@ class Gal
     # user_key
   end
 
+  def delete(pkey)
+    raise "Paste key must be a string" unless pkey.is_a?(String)
+
+    @default[:api_option] = "delete"
+    @default[:api_paste_key] = pkey
+
+    rsp = RestClient.post @url, @default
+
+    rsp.body
+  end
+
   def user
     @default[:api_option] = "userdetails"
 
