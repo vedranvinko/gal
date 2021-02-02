@@ -29,11 +29,22 @@ class Gal
       api_paste_expire_date: "N"
     }
 
-    user_key
+    # user_key
   end
 
   def show_options
     @default
+  end
+
+  def raw_paste(pkey)
+    raise "Paste key must be a string" unless pkey.is_a? String
+
+    @default[:api_paste_key] = pkey
+    @default[:api_option] = 'show_paste'
+
+    rsp = RestClient.post @raw, @default
+
+    rsp.body
   end
 
   # protected
