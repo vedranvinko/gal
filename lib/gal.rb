@@ -33,7 +33,7 @@ class Gal
   end
 
   def user
-    @default[:api_option] = 'userdetails'
+    @default[:api_option] = "userdetails"
 
     rsp = RestClient.post @url, @default
 
@@ -61,11 +61,14 @@ class Gal
     raise "Paste key must be a string" unless pkey.is_a? String
 
     @default[:api_paste_key] = pkey
-    @default[:api_option] = 'show_paste'
+    @default[:api_option] = "show_paste"
 
     rsp = RestClient.post @raw, @default
 
     rsp.body
+  end
+
+  def show_info
   end
 
   # protected
