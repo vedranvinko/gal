@@ -32,8 +32,20 @@ class Gal
     # user_key
   end
 
+  def create(options)
+    raise "Options must be a hash" unless options.is_a? Hash
+
+    @default[:api_paste_name] = options[:api_paste_name] || "AutoPaste: #{Time.now.strftime("%d/%m/%Y %H:%M:%S")}"
+    @default[:api_option] = "paste"
+    @default[:api_paste_code] = options[:api_paste_code]
+
+    rsp = RestClient.post @url, @default
+
+    rsp.body
+  end
+
   def delete(pkey)
-    raise "Paste key must be a string" unless pkey.is_a?(String)
+    raise "Paste key must be a string" unless pkey.is_a? String
 
     @default[:api_option] = "delete"
     @default[:api_paste_key] = pkey
@@ -52,7 +64,7 @@ class Gal
   end
 
   def list_user_entries(num)
-    raise "Please provide integer as an argument" unless num.is_a?(Integer)
+    raise "Please provide integer as an argument" unless num.is_a? Integer
 
     @default[:api_results_limit] = num
     @default[:api_option] = "list"
