@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gal (0.1.0)
+    gal (1.0.0)
       dotenv
       rest-client
 
