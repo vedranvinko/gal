@@ -1,5 +1,7 @@
 # gal
 
+[![Gem Version](https://badge.fury.io/rb/gal.svg)](https://badge.fury.io/rb/gal)
+
 gal is a small wrapper for [Pastebin](https://pastebin.com/) API written in Ruby. Main idea was to use it as a library instead inside utility scripts, etc.
 
 ## Installation
