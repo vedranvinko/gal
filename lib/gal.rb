@@ -29,7 +29,7 @@ class Gal
       api_paste_expire_date: "N"
     }
 
-    # user_key
+    user_key
   end
 
   def create(options)
@@ -91,10 +91,7 @@ class Gal
     rsp.body
   end
 
-  def show_info
-  end
-
-  # protected
+  protected
 
   def user_key
     rsp = RestClient.post @login, @default
